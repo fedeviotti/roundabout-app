@@ -1,14 +1,14 @@
 import * as React from 'react';
 import { Link } from 'gatsby';
 
-import Dashboard from '../components/dashboard';
+import Layout from '../components/layout';
 import Seo from '../components/seo';
 
 const SecondPage = () => (
-  <Dashboard>
+  <Layout>
     <Seo title="Page two" />
     <Link to="/">Go back to the homepage</Link>
-  </Dashboard>
+  </Layout>
 );
 
 export default SecondPage;

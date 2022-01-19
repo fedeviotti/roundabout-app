@@ -1,6 +1,12 @@
 import * as React from 'react';
-import { BellIcon, MenuAlt2Icon } from '@heroicons/react/outline';
-import { SearchIcon } from '@heroicons/react/solid';
+import { MenuAlt2Icon } from '@heroicons/react/outline';
+import {
+  BellIcon,
+  ChatAltIcon,
+  TemplateIcon,
+  SearchIcon,
+  ChevronDownIcon,
+} from '@heroicons/react/solid';
 import { Menu, Transition } from '@headlessui/react';
 import { Link } from 'gatsby';
 import { classNames } from '../utils/classnames';
@@ -22,8 +28,15 @@ const Toolbar: React.FC<ToolbarProps> = ({ setSidebarOpen }) => {
         <MenuAlt2Icon className="h-6 w-6" aria-hidden="true" />
       </button>
       <div className="flex-1 px-4 flex justify-between">
+        <div className="flex flex-1 flex-col justify-center">
+          <div className="flex items-center font-bold">Dashboard</div>
+          <div className="flex">
+            <span className="text-xs">17 January, 2022</span>
+            <ChevronDownIcon className="h-4 w-4" aria-hidden="true" />
+          </div>
+        </div>
         <div className="flex-1 flex">
-          <form className="w-full flex md:ml-0" action="#" method="GET">
+          <form className="flex md:ml-0" action="#" method="GET">
             <label htmlFor="search-field" className="sr-only">
               Search
             </label>
@@ -44,7 +57,21 @@ const Toolbar: React.FC<ToolbarProps> = ({ setSidebarOpen }) => {
         <div className="ml-4 flex items-center md:ml-6">
           <button
             type="button"
-            className="bg-white p-1 rounded-full text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+            className="bg-white p-1 ml-3 rounded-full text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+          >
+            <span className="sr-only">View messages</span>
+            <ChatAltIcon className="h-6 w-6" aria-hidden="true" />
+          </button>
+          <button
+            type="button"
+            className="bg-white p-1 ml-3 rounded-full text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+          >
+            <span className="sr-only">View apps</span>
+            <TemplateIcon className="h-6 w-6" aria-hidden="true" />
+          </button>
+          <button
+            type="button"
+            className="bg-white p-1 ml-3 rounded-full text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
           >
             <span className="sr-only">View notifications</span>
             <BellIcon className="h-6 w-6" aria-hidden="true" />
@@ -53,13 +80,40 @@ const Toolbar: React.FC<ToolbarProps> = ({ setSidebarOpen }) => {
           {/* Profile dropdown */}
           <Menu as="div" className="ml-3 relative">
             <div>
-              <Menu.Button className="max-w-xs bg-white flex items-center text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+              <Menu.Button className="max-w-xs bg-gray-100 border border-solid border-gray-300 px-4 py-2 flex items-center text-sm rounded-2xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                 <span className="sr-only">Open user menu</span>
-                <img
+                {/* <img
                   className="h-8 w-8 rounded-full"
                   src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                   alt=""
-                />
+                /> */}
+                <a href="#" className="flex-shrink-0 group block">
+                  <div className="flex items-center">
+                    <div>
+                      <img
+                        className="inline-block h-9 w-9 rounded-full"
+                        src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                        alt=""
+                      />
+                    </div>
+                    <div className="flex flex-col ml-3">
+                      <div className="flex">
+                        <span className="text-sm font-medium text-gray-700 group-hover:text-gray-900">
+                          Stephanie
+                        </span>
+                        <ChevronDownIcon
+                          className="h-4 w-4 mt-0.5"
+                          aria-hidden="true"
+                        />
+                      </div>
+                      <div className="flex">
+                        <span className="text-xs font-medium text-gray-500 group-hover:text-gray-700">
+                          Designer
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
               </Menu.Button>
             </div>
             <Transition

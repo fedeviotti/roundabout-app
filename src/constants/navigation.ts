@@ -7,7 +7,7 @@ import {
   ViewGridIcon,
 } from '@heroicons/react/outline';
 
-interface Navigation {
+export interface Navigation {
   name: string;
   to: string;
   icon: any;
@@ -16,14 +16,14 @@ interface Navigation {
 
 export const navigation: Navigation[] = [
   { name: 'Dashboard', to: '/', icon: ViewGridIcon, current: true },
-  { name: 'Schedule', to: '/page-2/', icon: ClockIcon, current: false },
+  { name: 'Schedule', to: '/schedule/', icon: ClockIcon, current: false },
   {
     name: 'Projects',
-    to: '/using-typescript/',
+    to: '/projects/',
     icon: ClipboardListIcon,
     current: false,
   },
-  { name: 'Support', to: '#', icon: SupportIcon, current: false },
-  { name: 'Calendar', to: '#', icon: CalendarIcon, current: false },
-  { name: 'Settings', to: '#', icon: CogIcon, current: false },
+  { name: 'Support', to: '/support/', icon: SupportIcon, current: false },
+  { name: 'Calendar', to: '/calendar/', icon: CalendarIcon, current: false },
+  { name: 'Settings', to: '/settings/', icon: CogIcon, current: false },
 ];
