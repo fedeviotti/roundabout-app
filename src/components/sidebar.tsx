@@ -2,7 +2,7 @@ import * as React from 'react';
 import { classNames } from '../utils/classnames';
 import { Link } from 'gatsby';
 import { navigation } from '../constants/navigation';
-import logo from '../images/snowflake.svg';
+import logo from '../images/home-logo.png';
 
 const Sidebar: React.FC = () => {
   return (

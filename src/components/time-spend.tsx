@@ -22,18 +22,46 @@ ChartJS.register(
 
 export const options = {
   responsive: true,
+  aspectRatio: 3,
   plugins: {
     legend: {
       position: 'top' as const,
       align: 'end' as const,
+      labels: {
+        boxWidth: 10,
+        usePointStyle: true,
+        color: 'rgba(183, 183, 183, 1)',
+      },
     },
     title: {
       display: false,
       text: 'Bar chart',
     },
   },
+  scales: {
+    x: {
+      grid: {
+        borderWidth: 1,
+        borderColor: 'rgba(202, 202, 202, 0.2)',
+        lineWidth: 0,
+      },
+      ticks: {
+        color: 'rgba(183, 183, 183, 1)',
+      },
+    },
+    y: {
+      grid: {
+        borderWidth: 0,
+        lineWidth: 1,
+        color: 'rgba(202, 202, 202, 0.2)',
+      },
+      ticks: {
+        color: 'rgba(183, 183, 183, 1)',
+      },
+    },
+  },
 };
-
+// lineColor: 'rgba(202, 202, 202, 0.5)',
 const labels = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri'];
 
 export const data = {
@@ -44,14 +72,14 @@ export const data = {
       data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
       borderRadius: 5,
       hoverBackgroundColor: 'rgba(225, 253, 94, 1)',
-      backgroundColor: 'rgba(227, 227, 227, 0.8)',
+      backgroundColor: 'rgba(227, 227, 227, 1)',
     },
     {
       label: 'Project Y',
       data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
       borderRadius: 5,
       hoverBackgroundColor: 'rgba(235, 182, 163, 1)',
-      backgroundColor: 'rgba(33, 34, 43, 0.8)',
+      backgroundColor: 'rgba(33, 34, 43, 1)',
     },
   ],
 };

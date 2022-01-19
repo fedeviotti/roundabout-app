@@ -1,5 +1,5 @@
-// SVG
-declare module '*.svg' {
-    const content: any;
-    export default content;
-  }
+// PNG
+declare module '*.png' {
+  const content: any;
+  export default content;
+}

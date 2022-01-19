@@ -1,45 +1,51 @@
 import * as React from 'react';
 import {
-  CheckCircleIcon,
-  ChevronRightIcon,
-  MailIcon,
+  DotsCircleHorizontalIcon,
+  PlayIcon,
   FilterIcon,
+  ClockIcon,
 } from '@heroicons/react/solid';
+import fixIcon from '../images/fix-icon.png';
+import penIcon from '../images/pen-icon.png';
+import moneyIcon from '../images/money-icon.png';
 
-const applications = [
+const cards = [
   {
-    applicant: {
-      name: 'Ricardo Cooper',
-      email: 'ricardo.cooper@example.com',
-      imageUrl:
-        'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    info: {
+      title: 'Fixing bug',
+      subject: 'Project X',
+      imageUrl: fixIcon,
     },
-    date: '2020-01-07',
-    dateFull: 'January 7, 2020',
+    time: '3:00 - 3:30 PM',
+    color: 'text-primary',
+    colorBg: 'bg-primary/30',
+    duration: '0.30 m',
     stage: 'Completed phone screening',
     href: '#',
   },
   {
-    applicant: {
-      name: 'Kristen Ramos',
-      email: 'kristen.ramos@example.com',
-      imageUrl:
-        'https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    info: {
+      title: 'Illustration',
+      subject: 'Acme',
+      imageUrl: penIcon,
     },
-    date: '2020-01-07',
-    dateFull: 'January 7, 2020',
+    time: '4:00 - 4:30 PM',
+    color: 'text-gray-400',
+    colorBg: 'bg-gray-400/30',
+    duration: '0.30 m',
     stage: 'Completed phone screening',
     href: '#',
   },
   {
-    applicant: {
-      name: 'Ted Fox',
-      email: 'ted.fox@example.com',
-      imageUrl:
-        'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    info: {
+      title: 'Filling tax return',
+      subject: 'Office',
+      imageUrl: moneyIcon,
     },
-    date: '2020-01-07',
-    dateFull: 'January 7, 2020',
+    time: '5:00 - 5:30 PM',
+    color: 'text-secondary',
+    colorBg: 'bg-secondary/30',
+    duration: '0.30 m',
     stage: 'Completed phone screening',
     href: '#',
   },
@@ -70,55 +76,65 @@ const TimeTracker: React.FC = () => {
       </div>
       <div className="overflow-hidden">
         <ul role="list">
-          {applications.map((application) => (
-            <li key={application.applicant.email}>
-              <a href={application.href} className="block">
+          {cards.map((card) => (
+            <li key={card.info.subject}>
+              <a href={card.href} className="block">
                 <div className="flex items-center px-4 py-4 sm:px-6 hover:bg-white bg-gray-50 sm:rounded-2xl my-2">
                   <div className="min-w-0 flex-1 flex items-center">
-                    <div className="flex-shrink-0">
+                    <div className="flex-shrink-0 self-start">
                       <img
-                        className="h-12 w-12 rounded-full"
-                        src={application.applicant.imageUrl}
-                        alt=""
+                        className="h-8 w-8 rounded-full"
+                        src={card.info.imageUrl}
+                        alt={card.info.title}
                       />
                     </div>
-                    <div className="min-w-0 flex-1 px-4 md:grid md:grid-cols-2 md:gap-4">
+                    <div className="min-w-0 flex-1 px-4 md:grid md:grid-cols-4 md:gap-4">
                       <div>
-                        <p className="text-sm font-medium text-indigo-600 truncate">
-                          {application.applicant.name}
+                        <p className="text-sm font-medium truncate">
+                          {card.info.title}
                         </p>
                         <p className="mt-2 flex items-center text-sm text-gray-500">
-                          <MailIcon
-                            className="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400"
-                            aria-hidden="true"
-                          />
-                          <span className="truncate">
-                            {application.applicant.email}
-                          </span>
+                          <span className="truncate">{card.info.subject}</span>
                         </p>
                       </div>
                       <div className="hidden md:block">
                         <div>
-                          <p className="text-sm text-gray-900">
-                            Applied on{' '}
-                            <time dateTime={application.date}>
-                              {application.dateFull}
-                            </time>
-                          </p>
                           <p className="mt-2 flex items-center text-sm text-gray-500">
-                            <CheckCircleIcon
-                              className="flex-shrink-0 mr-1.5 h-5 w-5 text-green-400"
-                              aria-hidden="true"
-                            />
-                            {application.stage}
+                            $ Billable
+                          </p>
+                        </div>
+                      </div>
+                      <div className="hidden md:block">
+                        <div>
+                          <p className="mt-2 flex items-center text-sm text-gray-500">
+                            <div
+                              className={`flex items-center justify-center ${card.colorBg} rounded-full mr-2 h-6 w-6`}
+                            >
+                              <ClockIcon
+                                className={`flex-shrink-0 h-5 w-5 ${card.color}`}
+                                aria-hidden="true"
+                              />
+                            </div>
+                            {card.time}
+                          </p>
+                        </div>
+                      </div>
+                      <div className="hidden md:block">
+                        <div>
+                          <p className="mt-2 flex items-center text-sm text-gray-500">
+                            {card.duration}
                           </p>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div>
-                    <ChevronRightIcon
-                      className="h-5 w-5 text-gray-400"
+                  <div className="flex">
+                    <PlayIcon
+                      className="h-5 w-5 text-gray-700"
+                      aria-hidden="true"
+                    />
+                    <DotsCircleHorizontalIcon
+                      className="h-5 w-5 text-gray-700"
                       aria-hidden="true"
                     />
                   </div>
