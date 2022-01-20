@@ -57,21 +57,21 @@ const Toolbar: React.FC<ToolbarProps> = ({ setSidebarOpen }) => {
         <div className="ml-4 flex items-center md:ml-6">
           <button
             type="button"
-            className="bg-white p-1 ml-3 rounded-full text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+            className="bg-white p-1 ml-3 rounded-full text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-secondary"
           >
             <span className="sr-only">View messages</span>
             <ChatAltIcon className="h-6 w-6" aria-hidden="true" />
           </button>
           <button
             type="button"
-            className="bg-white p-1 ml-3 rounded-full text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+            className="bg-white p-1 ml-3 rounded-full text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-secondary"
           >
             <span className="sr-only">View apps</span>
             <TemplateIcon className="h-6 w-6" aria-hidden="true" />
           </button>
           <button
             type="button"
-            className="bg-white p-1 ml-3 rounded-full text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+            className="bg-white p-1 ml-3 rounded-full text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-secondary"
           >
             <span className="sr-only">View notifications</span>
             <BellIcon className="h-6 w-6" aria-hidden="true" />
@@ -80,7 +80,7 @@ const Toolbar: React.FC<ToolbarProps> = ({ setSidebarOpen }) => {
           {/* Profile dropdown */}
           <Menu as="div" className="ml-3 relative">
             <div>
-              <Menu.Button className="max-w-xs bg-gray-100 border border-solid border-gray-300 px-4 py-2 flex items-center text-sm rounded-2xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+              <Menu.Button className="max-w-xs bg-gray-100 border border-solid border-gray-300 px-4 py-2 flex items-center text-sm rounded-2xl focus:outline-none focus:ring-2 focus:ring-secondary">
                 <span className="sr-only">Open user menu</span>
                 {/* <img
                   className="h-8 w-8 rounded-full"

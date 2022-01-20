@@ -3,6 +3,7 @@ import { classNames } from '../utils/classnames';
 import { Link } from 'gatsby';
 import { navigation } from '../constants/navigation';
 import logo from '../images/home-logo.png';
+import { PlusSmIcon as PlusSmIconSolid } from '@heroicons/react/solid';
 
 const Sidebar: React.FC = () => {
   return (
@@ -12,7 +13,7 @@ const Sidebar: React.FC = () => {
         <div className="flex items-center justify-center h-16 flex-shrink-0 px-4 bg-sidebar">
           <img className="h-8 w-auto" src={logo} alt="Snowflake" />
         </div>
-        <div className="flex-1 flex flex-col overflow-y-auto">
+        <div className="flex-1 flex flex-col overflow-y-auto justify-between">
           <nav className="flex-1 px-2 py-4 space-y-1">
             {navigation.map((item) => (
               <Link
@@ -37,6 +38,12 @@ const Sidebar: React.FC = () => {
               </Link>
             ))}
           </nav>
+          <button
+            type="button"
+            className="inline-flex self-center mb-5 items-center p-2 border border-transparent rounded-full shadow-sm text-white bg-gray-700 hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-secondary"
+          >
+            <PlusSmIconSolid className="h-5 w-5" aria-hidden="true" />
+          </button>
         </div>
       </div>
     </div>

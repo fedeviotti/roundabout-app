@@ -1,5 +1,5 @@
 import * as React from 'react';
-import '../modules/custom.d.ts';
+
 import Seo from '../components/seo';
 import Layout from '../components/layout';
 import TimeSpend from '../components/time-spend';
