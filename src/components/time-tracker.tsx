@@ -5,51 +5,7 @@ import {
   FilterIcon,
   ClockIcon,
 } from '@heroicons/react/solid';
-import fixIcon from '../images/fix-icon.png';
-import penIcon from '../images/pen-icon.png';
-import moneyIcon from '../images/money-icon.png';
-
-const cards = [
-  {
-    info: {
-      title: 'Fixing bug',
-      subject: 'Project X',
-      imageUrl: fixIcon,
-    },
-    time: '3:00 - 3:30 PM',
-    color: 'text-primary',
-    colorBg: 'bg-primary/30',
-    duration: '0.30 m',
-    stage: 'Completed phone screening',
-    href: '#',
-  },
-  {
-    info: {
-      title: 'Illustration',
-      subject: 'Acme',
-      imageUrl: penIcon,
-    },
-    time: '4:00 - 4:30 PM',
-    color: 'text-gray-400',
-    colorBg: 'bg-gray-400/30',
-    duration: '0.30 m',
-    stage: 'Completed phone screening',
-    href: '#',
-  },
-  {
-    info: {
-      title: 'Filling tax return',
-      subject: 'Office',
-      imageUrl: moneyIcon,
-    },
-    time: '5:00 - 5:30 PM',
-    color: 'text-secondary',
-    colorBg: 'bg-secondary/30',
-    duration: '0.30 m',
-    stage: 'Completed phone screening',
-    href: '#',
-  },
-];
+import { StaticImage } from 'gatsby-plugin-image';
 
 const TimeTracker: React.FC = () => {
   return (
@@ -76,72 +32,196 @@ const TimeTracker: React.FC = () => {
       </div>
       <div className="overflow-hidden">
         <ul role="list">
-          {cards.map((card) => (
-            <li key={card.info.subject}>
-              <a href={card.href} className="block">
-                <div className="flex items-center px-4 py-4 sm:px-6 hover:bg-white bg-gray-50 sm:rounded-2xl my-2">
-                  <div className="min-w-0 flex-1 flex items-center">
-                    <div className="flex-shrink-0 self-start">
-                      <img
-                        className="h-8 w-8 rounded-full"
-                        src={card.info.imageUrl}
-                        alt={card.info.title}
-                      />
-                    </div>
-                    <div className="min-w-0 flex-1 px-4 md:grid md:grid-cols-4 md:gap-4">
-                      <div>
-                        <p className="text-sm font-medium truncate">
-                          {card.info.title}
-                        </p>
-                        <p className="mt-2 flex items-center text-sm text-gray-500">
-                          <span className="truncate">{card.info.subject}</span>
-                        </p>
-                      </div>
-                      <div className="hidden md:block">
-                        <div>
-                          <p className="mt-2 flex items-center text-sm text-gray-500">
-                            $ Billable
-                          </p>
-                        </div>
-                      </div>
-                      <div className="hidden md:block">
-                        <div>
-                          <p className="mt-2 flex items-center text-sm text-gray-500">
-                            <div
-                              className={`flex items-center justify-center ${card.colorBg} rounded-full mr-2 h-6 w-6`}
-                            >
-                              <ClockIcon
-                                className={`flex-shrink-0 h-5 w-5 ${card.color}`}
-                                aria-hidden="true"
-                              />
-                            </div>
-                            {card.time}
-                          </p>
-                        </div>
-                      </div>
-                      <div className="hidden md:block">
-                        <div>
-                          <p className="mt-2 flex items-center text-sm text-gray-500">
-                            {card.duration}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
+          <li>
+            <a href="#" className="block">
+              <div className="flex items-center px-4 py-4 sm:px-6 hover:bg-white bg-gray-50 sm:rounded-2xl my-2">
+                <div className="min-w-0 flex-1 flex items-center">
+                  <div className="flex-shrink-0 self-start">
+                    <StaticImage
+                      className="h-8 w-8 rounded-full"
+                      src="../images/fix-icon.png"
+                      alt="Fixing Bug"
+                    />
                   </div>
-                  <div className="flex">
-                    <PlayIcon
-                      className="h-5 w-5 text-gray-700"
-                      aria-hidden="true"
-                    />
-                    <DotsCircleHorizontalIcon
-                      className="h-5 w-5 text-gray-700"
-                      aria-hidden="true"
-                    />
+                  <div className="min-w-0 flex-1 px-4 md:grid md:grid-cols-4 md:gap-4">
+                    <div>
+                      <p className="text-sm font-medium truncate">Fixing Bug</p>
+                      <p className="mt-2 flex items-center text-sm text-gray-500">
+                        <span className="truncate">Project X</span>
+                      </p>
+                    </div>
+                    <div className="hidden md:block">
+                      <div>
+                        <p className="mt-2 flex items-center text-sm text-gray-500">
+                          $ Billable
+                        </p>
+                      </div>
+                    </div>
+                    <div className="hidden md:block">
+                      <div>
+                        <p className="mt-2 flex items-center text-sm text-gray-500">
+                          <div
+                            className={`flex items-center justify-center bg-primary/30 rounded-full mr-2 h-6 w-6`}
+                          >
+                            <ClockIcon
+                              className={`flex-shrink-0 h-5 w-5 text-primary`}
+                              aria-hidden="true"
+                            />
+                          </div>
+                          3:00 - 3:30 PM
+                        </p>
+                      </div>
+                    </div>
+                    <div className="hidden md:block">
+                      <div>
+                        <p className="mt-2 flex items-center text-sm text-gray-500">
+                          0.30 m
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </a>
-            </li>
-          ))}
+                <div className="flex">
+                  <PlayIcon
+                    className="h-5 w-5 text-gray-700"
+                    aria-hidden="true"
+                  />
+                  <DotsCircleHorizontalIcon
+                    className="h-5 w-5 text-gray-700"
+                    aria-hidden="true"
+                  />
+                </div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="#" className="block">
+              <div className="flex items-center px-4 py-4 sm:px-6 hover:bg-white bg-gray-50 sm:rounded-2xl my-2">
+                <div className="min-w-0 flex-1 flex items-center">
+                  <div className="flex-shrink-0 self-start">
+                    <StaticImage
+                      className="h-8 w-8 rounded-full"
+                      src="../images/pen-icon.png"
+                      alt="Illustration"
+                    />
+                  </div>
+                  <div className="min-w-0 flex-1 px-4 md:grid md:grid-cols-4 md:gap-4">
+                    <div>
+                      <p className="text-sm font-medium truncate">
+                        Illustration
+                      </p>
+                      <p className="mt-2 flex items-center text-sm text-gray-500">
+                        <span className="truncate">Acme</span>
+                      </p>
+                    </div>
+                    <div className="hidden md:block">
+                      <div>
+                        <p className="mt-2 flex items-center text-sm text-gray-500">
+                          $ Billable
+                        </p>
+                      </div>
+                    </div>
+                    <div className="hidden md:block">
+                      <div>
+                        <p className="mt-2 flex items-center text-sm text-gray-500">
+                          <div
+                            className={`flex items-center justify-center bg-gray-400/30 rounded-full mr-2 h-6 w-6`}
+                          >
+                            <ClockIcon
+                              className={`flex-shrink-0 h-5 w-5 text-gray-400`}
+                              aria-hidden="true"
+                            />
+                          </div>
+                          4:00 - 4:30 PM
+                        </p>
+                      </div>
+                    </div>
+                    <div className="hidden md:block">
+                      <div>
+                        <p className="mt-2 flex items-center text-sm text-gray-500">
+                          0.30 m
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex">
+                  <PlayIcon
+                    className="h-5 w-5 text-gray-700"
+                    aria-hidden="true"
+                  />
+                  <DotsCircleHorizontalIcon
+                    className="h-5 w-5 text-gray-700"
+                    aria-hidden="true"
+                  />
+                </div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="#" className="block">
+              <div className="flex items-center px-4 py-4 sm:px-6 hover:bg-white bg-gray-50 sm:rounded-2xl my-2">
+                <div className="min-w-0 flex-1 flex items-center">
+                  <div className="flex-shrink-0 self-start">
+                    <StaticImage
+                      className="h-8 w-8 rounded-full"
+                      src="../images/money-icon.png"
+                      alt="Filling Tax Return"
+                    />
+                  </div>
+                  <div className="min-w-0 flex-1 px-4 md:grid md:grid-cols-4 md:gap-4">
+                    <div>
+                      <p className="text-sm font-medium truncate">
+                        Filling Tax Return
+                      </p>
+                      <p className="mt-2 flex items-center text-sm text-gray-500">
+                        <span className="truncate">Office</span>
+                      </p>
+                    </div>
+                    <div className="hidden md:block">
+                      <div>
+                        <p className="mt-2 flex items-center text-sm text-gray-500">
+                          $ Billable
+                        </p>
+                      </div>
+                    </div>
+                    <div className="hidden md:block">
+                      <div>
+                        <p className="mt-2 flex items-center text-sm text-gray-500">
+                          <div
+                            className={`flex items-center justify-center bg-secondary/30 rounded-full mr-2 h-6 w-6`}
+                          >
+                            <ClockIcon
+                              className={`flex-shrink-0 h-5 w-5 text-secondary`}
+                              aria-hidden="true"
+                            />
+                          </div>
+                          5:00 - 5:30 PM
+                        </p>
+                      </div>
+                    </div>
+                    <div className="hidden md:block">
+                      <div>
+                        <p className="mt-2 flex items-center text-sm text-gray-500">
+                          0.30 m
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex">
+                  <PlayIcon
+                    className="h-5 w-5 text-gray-700"
+                    aria-hidden="true"
+                  />
+                  <DotsCircleHorizontalIcon
+                    className="h-5 w-5 text-gray-700"
+                    aria-hidden="true"
+                  />
+                </div>
+              </div>
+            </a>
+          </li>
         </ul>
       </div>
     </div>

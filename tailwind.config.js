@@ -8,6 +8,7 @@ module.exports = {
         'sidebar-hover': '#2a2a39',
         primary: '#baf0f4',
         secondary: '#eeb6a2',
+        'secondary-dark': '#d6a391',
         tertiary: '#e1fd5e',
       },
     },

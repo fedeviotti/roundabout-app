@@ -2,3 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+.callToAction {
+    background-image: url("../images/call-to-action.png");
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position:center;
+    aspect-ratio: 2.07;
+}
+

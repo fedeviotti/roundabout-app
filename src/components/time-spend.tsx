@@ -22,7 +22,7 @@ ChartJS.register(
 
 export const options = {
   responsive: true,
-  aspectRatio: 3,
+  aspectRatio: 2,
   plugins: {
     legend: {
       position: 'top' as const,
@@ -61,7 +61,7 @@ export const options = {
     },
   },
 };
-// lineColor: 'rgba(202, 202, 202, 0.5)',
+
 const labels = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri'];
 
 export const data = {
@@ -86,7 +86,7 @@ export const data = {
 
 const TimeSpend: React.FC = () => {
   return (
-    <div className="flex-col">
+    <div className="flex-col h-full">
       <div className="flex flex justify-between">
         <span className="text-lg font-bold p-4">Time Spend on projects</span>
         <div>

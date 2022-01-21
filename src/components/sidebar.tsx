@@ -2,8 +2,8 @@ import * as React from 'react';
 import { classNames } from '../utils/classnames';
 import { Link } from 'gatsby';
 import { navigation } from '../constants/navigation';
-import logo from '../images/home-logo.png';
 import { PlusSmIcon as PlusSmIconSolid } from '@heroicons/react/solid';
+import { StaticImage } from 'gatsby-plugin-image';
 
 const Sidebar: React.FC = () => {
   return (
@@ -11,7 +11,12 @@ const Sidebar: React.FC = () => {
       {/* Sidebar component, swap this element with another sidebar if you like */}
       <div className="flex-1 flex flex-col min-h-0 bg-sidebar">
         <div className="flex items-center justify-center h-16 flex-shrink-0 px-4 bg-sidebar">
-          <img className="h-8 w-auto" src={logo} alt="Snowflake" />
+          <StaticImage
+            src={'../images/home-logo.png'}
+            alt="Home logo"
+            className="h-8 w-8"
+          />
+          {/*<img className="h-8 w-auto" src={logo} alt="Snowflake" />*/}
         </div>
         <div className="flex-1 flex flex-col overflow-y-auto justify-between">
           <nav className="flex-1 px-2 py-4 space-y-1">
