@@ -5,8 +5,10 @@ const CallToAction: React.FC = () => {
     <>
       <div className="callToAction pt-auto">
         <div className="flex flex-col items-start justify-end h-full pb-6 lg:pb-1 xl:pb-4 pl-3">
-          <p className="pb-10 lg:pb-1 xl:pb-4">Welcome back to your</p>
-          <p className="pb-10 lg:pb-1 xl:pb-4 font-bold text-2xl">
+          <p className="pb-10 lg:pb-1 xl:pb-4 text-2xl lg:text-base xl:text-xl">
+            Welcome back to your
+          </p>
+          <p className="pb-10 lg:pb-1 xl:pb-4 font-bold text-3xl lg:text-base xl:text-2xl">
             Daily Time Tracker
           </p>
           <button
